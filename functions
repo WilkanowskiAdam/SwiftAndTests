@@ -1,0 +1,314 @@
+
+//Function that calculate given age to days (will be F1)
+func calcAge(_ age: Int) -> Int {
+    return age * 365
+}
+
+//tests for this function
+
+import XCTest
+
+class SolutionTest1: XCTestCase {
+    static var allTests = [
+        ("Test 1", test1),
+        ("Test 2", test2),
+        ("Test 3", test3)
+    ]
+
+    func test1() {
+        XCTAssertEqual(calcAge(10),3650)
+    }
+    func test2() {
+        XCTAssertEqual(calcAge(0),0)
+    }
+    func test3() {
+        XCTAssertEqual(calcAge(73),26645)
+    }
+}
+
+
+SolutionTest1.defaultTestSuite.run()
+
+
+//Sum of Two Numbers
+func addition(_ a: Int, _ b: Int) -> Int {
+    return a + b
+}
+
+class SolutionTest2: XCTestCase {
+    static var allTests = [
+        ("Test 1", test1),
+        ("Test 2", test2),
+        ("Test 3", test3)
+    ]
+    
+    func test1() {
+        XCTAssertEqual(addition(2,3), 5)
+    }
+    func test2() {
+        XCTAssertEqual(addition(-3,-6), -9)
+    }
+    func test3() {
+        XCTAssertEqual(addition(7,3), 10)
+    }
+
+}
+SolutionTest2.defaultTestSuite.run()
+
+//Function that adding String to String
+func nameString(_ name: String) ->String {
+    var b = "Edabit"
+    var result = name + b
+      return result
+}
+
+class SolutionTest3: XCTestCase {
+    static var allTests = [
+        ("Test 1", test1),
+        ("Test 2", test2),
+        ("Test 3", test3),
+        ("Test 4", test4)
+    ]
+
+    func test1() {
+        XCTAssertEqual(nameString("Mubashir"), "MubashirEdabit")
+    }
+    func test2() {
+        XCTAssertEqual(nameString("Matt"), "MattEdabit")
+    }
+    func test3() {
+        XCTAssertEqual(nameString("Swift"), "SwiftEdabit")
+    }
+    func test4() {
+        XCTAssertEqual(nameString("Airforce"), "AirforceEdabit")
+    }
+}
+
+SolutionTest3.defaultTestSuite.run()
+
+
+//Return the Remainder from Two Numbers
+
+//func reminder(_ num1: Int, _ num2: Int) -> Int {
+//    return num1 % num2
+//}
+//
+//class SolutionTest4: XCTestCase {
+//    static var allTests = [
+//        ("Test 1", test1),
+//        ("Test 2", test2),
+//        ("Test 3", test3),
+//        ("Test 4", test4)
+//    ]
+//
+//    func test1() {
+//         XCTAssertEqual(remainder(5, 2), 1)
+//    }
+//    func test2() {
+//         XCTAssertEqual(remainder(7, 10), 7)
+//    }
+//    func test3() {
+//         XCTAssertEqual(remainder(-9, 45), -9)
+//    }
+//    func test4() {
+//         XCTAssertEqual(remainder(5, 5), 0)
+//    }
+//}
+//remainder(3, 2)
+//print("Funkcja reminder")
+//SolutionTest4.defaultTestSuite.run()
+
+//Power Calculator
+func circuitPower(_ voltage: Int, _ current: Int) -> Int {
+    return voltage * current
+}
+
+class SolutionTest5: XCTestCase {
+    static var allTests = [
+        ("Test 1", test1),
+        ("Test 2", test2),
+        ("Test 3", test3)
+    ]
+    
+    func test1() {
+        XCTAssertEqual(circuitPower(110, 3), 330)
+    }
+    func test2() {
+        XCTAssertEqual(circuitPower(230, 10), 2300)
+    }
+    func test3() {
+        XCTAssertEqual(circuitPower(480, 20), 9600)
+    }
+}
+
+SolutionTest5.defaultTestSuite.run()
+
+
+//Are the number equal?
+func isEqual2(_ num1: Int, _ num2:Int) -> Bool {
+    if num1 == num2 {
+        return true
+    }else{
+        return false
+    }
+}
+
+class SolutionTest6: XCTestCase {
+    static var allTests = [
+        ("Test 1", test1),
+        ("Test 2", test2),
+        ("Test 3", test3),
+        ("Test 4", test4),
+        ("Test 5", test5)
+    ]
+    
+    func test1() {
+        XCTAssertEqual(isEqual2(2, 2), true)
+    }
+    func test2() {
+        XCTAssertEqual(isEqual2(88, 88), true)
+    }
+    func test3() {
+        XCTAssertEqual(isEqual2(36, 35), false)
+    }
+    func test4() {
+        XCTAssertEqual(isEqual2(1, 1), true)
+    }
+    func test5() {
+        XCTAssertEqual(isEqual2(5, 6), false)
+    }
+}
+SolutionTest6.defaultTestSuite.run()
+
+
+//Exists a Number Higher?
+func existsHigher(_ array:[Int], _ num: Int) -> Bool {
+    let array2 = array.sorted()
+    let lastElement = array2[array2.count-1]
+    if lastElement >= num {
+        return true
+    }else {
+        return false
+    }
+    }
+
+
+
+class SolutionTest7: XCTestCase {
+    static var allTests = [
+        ("Test 1", test1),
+        ("Test 2", test2),
+        ("Test 3", test3),
+        ("Test 4", test4),
+        ("Test 5", test5)
+    ]
+
+    func test1() {
+         XCTAssertEqual(existsHigher([5, 3, 15, 22, 4], 10), true)
+    }
+    func test2() {
+         XCTAssertEqual(existsHigher([1, 2, 3, 4, 5], 8), false)
+    }
+    func test3() {
+         XCTAssertEqual(existsHigher([4, 3, 3, 3, 2, 2, 2], 4), true)
+    }
+    func test4() {
+         XCTAssertEqual(existsHigher([2, 2, 2, 2], 5), false)
+    }
+    func test5() {
+         XCTAssertEqual(existsHigher([], 0), false)
+    }
+}
+
+//SolutionTest7.defaultTestSuite.run()
+
+
+//Four Passengers and a Driver
+func carsNeeded(_ n:Int) -> Int {
+    
+    if n % 5 == 0 {
+        var  cars = n/5
+        return cars
+    } else {
+        var cars = ((n - (n % 5) ) / 5) + 1
+        return cars
+    }
+}
+
+class SolutionTest8: XCTestCase {
+    static var allTests = [
+        ("Test 1", test1),
+        ("Test 2", test2),
+        ("Test 3", test3),
+            ("Test 4", test4),
+            ("Test 5", test5),
+            ("Test 6", test6)
+            
+    ]
+
+    func test1() {
+        XCTAssertEqual(carsNeeded(0), 0)
+    }
+    func test2() {
+        XCTAssertEqual(carsNeeded(1), 1)
+    }
+    func test3() {
+        XCTAssertEqual(carsNeeded(4), 1)
+    }
+    func test4() {
+        XCTAssertEqual(carsNeeded(5), 1)
+    }
+    func test5() {
+        XCTAssertEqual(carsNeeded(6), 2)
+    }
+    func test6() {
+        XCTAssertEqual(carsNeeded(18), 4)
+    }
+    
+}
+
+SolutionTest8.defaultTestSuite.run()
+
+
+func dictionary(_ initial: String, _ words: [String]) -> [String] {
+    var array4: [String] = []
+    for i in  words {
+        if i.contains(initial){
+            array4.append(i)
+        }
+    }
+    return array4
+}
+
+
+class SolutionTest9: XCTestCase {
+    static var allTests = [
+        ("Test 1", test1),
+        ("Test 2", test2),
+        ("Test 3", test3),
+                ("Test 4", test4),
+                ("Test 5", test5),
+                ("Test 6", test6)
+    ]
+
+    func test1() {
+        XCTAssertEqual(dictionary("bu", ["button", "breakfast", "border"]), ["button"])
+    }
+    func test2() {
+        XCTAssertEqual(dictionary("beau", ["pastry", "delicious", "name", "boring"]), [])
+    }
+    func test3() {
+        XCTAssertEqual(dictionary("there", ["there", "here", "everywhere"]), ["there"])
+    }
+        func test4() {
+        XCTAssertEqual(dictionary("sno", ["snow", "paper", "ghost"]), ["snow"])
+    }
+        func test5() {
+        XCTAssertEqual(dictionary("cre", ["creating", "creature", "creed"]), ["creating", "creature", "creed"])
+    }
+        func test6() {
+        XCTAssertEqual(dictionary("ma", ["marriage", "married", "many", "delight"]), ["marriage", "married", "many"])
+    }
+}
+
+SolutionTest9.defaultTestSuite.run()
